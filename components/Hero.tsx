@@ -2,6 +2,7 @@ import Image from "next/image";
 import { hero_bg } from "@/utils/images";
 import { ArrowUpRight } from "lucide-react";
 import GradientButton from "./GradientButton";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -20,35 +21,34 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-[800px] mt-10 md:mt-1">
-        <h1 className="font-heading text-[40px] md:text-[60px] lg:text-[76px] font-black leading-[1.05] tracking-tight mb-6">
-          BUILDING THE
+        <h1 className="font-heading text-[40px] md:text-[60px] lg:text-[76px] font-black leading-[1.05] tracking-tight mb-4">
+          Ideas.
           <br />
-          FOUNDATION WEB3
+          Architecture.
+          <br />
+          Decentralized Systems.
         </h1>
 
-        <p className="text-base md:text-lg text-gray-200 max-w-[600px] mb-10 leading-relaxed font-light">
-          VIDELABS is an R&D lab building next-generation infrastructure,
-          protocols, and developer tools for a decentralized future.
+        <p className="text-base md:text-lg text-gray-200 max-w-[600px] mb-6 leading-relaxed font-light">
+          VIDELABS is a RESEARCH AND DEVELOPMENT Lab building next-generation
+          infrastructure, protocols, and developer tools on-chain.
         </p>
 
-        <div className="flex flex-wrap items-center gap-4">
-          {/* <div className="rounded-full p-px bg-[linear-gradient(to_right,#FEC924,#FE5163)] transition-shadow cursor-pointer">
-            <button className="bg-[linear-gradient(to_right,#9910D7,#007AD3)] h-full w-full px-8 py-3.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all">
-              Explore Our Work
-            </button>
-          </div> */}
+        <div className="flex flex-wrap items-center gap-4 mb-5">
           <GradientButton children="Explore Our Work" showIcon={false} />
 
-          <div className="rounded-full p-px bg-[linear-gradient(to_right,#FFE500,#2EC64F,#3A6CFD,#FF28B7)] transition-shadow cursor-pointer">
-            <button className="group bg-black relative flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-colors h-full w-full">
-              Contact Us
-              <ArrowUpRight
-                color="#fff"
-                size={18}
-                className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </button>
-          </div>
+          <Link href="#contact" className="block w-full sm:w-auto">
+            <div className="rounded-full p-px bg-[linear-gradient(to_right,#FFE500,#2EC64F,#3A6CFD,#FF28B7)] transition-shadow cursor-pointer">
+              <div className="group bg-black relative flex justify-center items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-colors h-full w-full">
+                Contact Us
+                <ArrowUpRight
+                  color="#fff"
+                  size={18}
+                  className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

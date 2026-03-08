@@ -11,14 +11,12 @@ export default function BrilliantIdeas() {
           <h2 className="font-heading text-3xl md:text-6xl font-black mb-6 leading-[1.15] tracking-tight">
             BRILLIANT
             <br className="hidden md:block" />
-            IDEAS, TOMORROW
+            IDEAS, ONCHAIN
             <br className="hidden md:block" />
-            REALIZED
+            TOMORROW
           </h2>
           <p className="text-gray-300 text-sm md:text-lg leading-relaxed font-light mb-8 max-w-md">
-            Experience the future with Videlabs, where innovation meets
-            intelligence. Our advanced blockchain solutions are designed to
-            create smarter systems.
+            Videlabs is a hub for builders creating the next wave of decentralized technology. From blockchain infrastructure to intelligent on-chain systems, we are shaping the future of Web3.
           </p>
           <GradientButton className="h-full py-2.5" />
         </div>

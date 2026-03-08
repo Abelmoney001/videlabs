@@ -11,14 +11,13 @@ export default function FeaturedProjects() {
           <p className="text-xs font-semibold tracking-widest text-gray-400 mb-4 uppercase">
             Featured Projects
           </p>
-          <h2 className="font-heading text-3xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tight text-white">
-            CROSS CHAIN
+          <h2 className="font-heading text-3xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tight text-white uppercase">
+            Multichain
             <br />
-            LINK PROTOCOL
+            Development Lab
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-            A trustless cross-chain messaging protocol enabling secure
-            communication between heterogeneous blockchain networks.
+            Developing tools and integrations that enable seamless interaction across multiple blockchain ecosystems
           </p>
 
           {/* <button className="flex items-center gap-2 bg-linear-to-r from-primary to-secondary px-6 py-2.5 rounded-full text-sm font-semibold text-white hover:brightness-110 transition-all w-max group">

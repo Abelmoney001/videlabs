@@ -37,7 +37,9 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <GradientButton />
+      <Link href="#contact">
+        <GradientButton asDiv />
+      </Link>
     </nav>
   );
 }

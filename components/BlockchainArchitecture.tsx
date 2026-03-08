@@ -47,13 +47,12 @@ export default function BlockchainArchitecture() {
           <p className="text-xs font-semibold tracking-[0.2em] text-gray-400 mb-6 uppercase">
             SOLUTION FOR EVERY FACTOR
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl lg:text-[60px] font-black leading-[1.15] tracking-tight">
-            BLOCKCHAIN
+          <h2 className="uppercase font-heading text-3xl md:text-5xl lg:text-[60px] font-black leading-[1.15] tracking-tight">
+            Designing and
             <br />
-            ARCHITECTURE, DESIGN &<br />
-            IMPLEMENTATION FOR
+            implementing custom blockchain
             <br />
-            ANY INDUSTRY
+            architectures.
           </h2>
         </div>
 

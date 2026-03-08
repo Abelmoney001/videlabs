@@ -16,9 +16,7 @@ export default function CrackedFounders() {
             VIDELABS
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light mb-8 max-w-lg">
-            A raw, honest dive into how founders build, fail, and persevere.
-            Unfiltered conversations with builders navigating the messy side of
-            startups.
+            Raw, unfiltered conversations with builders exploring the journey of creating, building, and scaling ideas and products in the evolving technology landscape.
           </p>
           <GradientButton children="Start Listening" showIcon={false} showArrow={true} />
         </div>

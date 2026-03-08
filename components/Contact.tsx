@@ -1,6 +1,7 @@
 import { discord, link, telegram, x } from "@/utils/images";
 import GradientButton from "./GradientButton";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Contact() {
   const projectTypes = [
@@ -23,7 +24,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="bg-black md:py-24 px-6 md:px-12 lg:px-24">
+    <section className="bg-black md:py-24 px-6 md:px-12 lg:px-24" id="contact">
       <div className="max-w-7xl mx-auto bg-white/5 rounded-[40px] p-4 py-8 md:py-16 md:p-16 border border-white/10 shadow-2xl">
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8">
@@ -45,16 +46,20 @@ export default function Contact() {
             </div>
             <div>
               <p className="text-xs text-gray-500 mb-2">Follow Us</p>
-              <div className="flex bg-transparent border border-white/10 rounded-md">
+              <div className="flex bg-transparent border border-white/10 rounded-md p-3">
                 {/* Social Icons Placeholders */}
-                {[x, telegram, discord, link].map((platform, i) => (
+                {/* {[x, telegram, discord, link].map((platform, i) => ( */}
+                {/* {[x].map((platform, i) => (
                   <button
                     key={i}
                     className={`${i === platform.length - 1 ? "border-none" : "border-r border-white/10"} px-2 w-8 h-8 flex items-center justify-center text-xs text-gray-400 hover:text-white hover:border-white/30 transition-all`}
                   >
                     <Image src={platform} alt="Social Icon" />
                   </button>
-                ))}
+                ))} */}
+                <Link href="https://x.com/Videlabs?s=20" target="_blank">
+                  <Image src={x} alt="Social Icon" />
+                </Link>
               </div>
             </div>
           </div>
