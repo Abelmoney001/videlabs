@@ -95,7 +95,7 @@ export default function AdminConfigPage() {
               required
             />
             <p className="text-xs text-gray-500 mt-2">
-              This is the API_SECRET_KEY from your .env.local file.
+              This is the key from your set
             </p>
           </div>
 
