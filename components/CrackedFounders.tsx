@@ -4,7 +4,7 @@ import GradientButton from "./GradientButton";
 
 export default function CrackedFounders() {
   return (
-    <section className="bg-black text-white md:py-24 px-6 md:px-12 lg:px-24">
+    <section className="bg-black text-white md:py-24 px-6 md:px-12 lg:px-24" id="podcast">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-24">
         {/* Left Content */}
         <div className="flex-1 max-w-xl">

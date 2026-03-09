@@ -6,25 +6,25 @@ export default function BlockchainArchitecture() {
     {
       title: "Custom Software Development",
       description:
-        "We design and build modern software applications to meet the specific needs of our clients.",
+        "Identifying the core problems decentralized systems can solve and defining the right blockchain architecture to address them.",
       icon: custom_software_dev,
     },
     {
       title: "Business Consulting",
       description:
-        "Assisting other companies in improving business strategies and operations.",
+        "Transforming innovative concepts into practical blockchain designs, from protocol logic to smart contract frameworks.",
       icon: business_consulting,
     },
     {
       title: "Blockchain Development Services",
       description:
-        "Creating and designing functional blockchain for businesses or individuals.",
+        "Integrating solutions within the broader decentralized ecosystem, enabling interoperability across networks and applications.",
       icon: blockchain_dev,
     },
     {
       title: "Application Maintenance & Support",
       description:
-        "We ensure software applications run smoothly and efficiently through ongoing support and maintenance.",
+        "Solving complex technical challenges to build secure, scalable, and efficient blockchain infrastructures.",
       icon: app_maintenance,
     },
   ];
@@ -61,15 +61,15 @@ export default function BlockchainArchitecture() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/5 flex flex-col justify-between min-h-[320px] shadow-2xl transition-transform hover:-translate-y-2 duration-300"
+              className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/5 flex flex-col gap-9 min-h-[320px] shadow-2xl transition-transform hover:-translate-y-2 duration-300"
             >
               <div>
                 <div className="mb-6 bg-white/5 border border-white/10 rounded-full h-12 w-12 flex items-center justify-center">
                   <Image src={card.icon} alt={card.title} width={24} height={24} />
                 </div>
-                <p className="text-xl font-normal mb-4 text-gray-100 leading-tight">
+                {/* <p className="text-xl font-normal mb-4 text-gray-100 leading-tight">
                   {card.title}
-                </p>
+                </p> */}
               </div>
               <p className="text-sm text-gray-400 leading-relaxed mt-5">
                 {card.description}

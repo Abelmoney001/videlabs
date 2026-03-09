@@ -12,8 +12,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Videlabs",
-  description: "Building the foundation of Web3",
+  title: "Ideas . Architecture . Decentralized Systems",
+  description: "VIDELABS is a RESEARCH AND DEVELOPMENT Lab building next-generation infrastructure, protocols, and developer tools on-chain.",
 };
 
 export default async function RootLayout({

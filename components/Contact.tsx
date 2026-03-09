@@ -38,10 +38,10 @@ export default function Contact() {
             <div>
               <p className="text-xs text-gray-500 mb-1">Send Us An Email</p>
               <a
-                href="mailto:info@videlabs.com"
+                href="mailto:contact@videlabs.com"
                 className="text-sm text-gray-200 hover:text-white transition-colors"
               >
-                info@videlabs.com
+                contact@videlabs.com
               </a>
             </div>
             <div>

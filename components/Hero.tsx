@@ -35,7 +35,7 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap items-center gap-4 mb-5">
-          <GradientButton children="Explore Our Work" showIcon={false} />
+          {/* <GradientButton children="Explore Our Work" showIcon={false} /> */}
 
           <Link href="#contact" className="block w-full sm:w-auto">
             <div className="rounded-full p-px bg-[linear-gradient(to_right,#FFE500,#2EC64F,#3A6CFD,#FF28B7)] transition-shadow cursor-pointer">

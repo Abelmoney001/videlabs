@@ -5,20 +5,41 @@ import GradientButton from "./GradientButton";
 
 export default function FAQ() {
   const faqs = [
-    { num: "02", question: "What is blockchain development?" },
+    {
+      num: "01",
+      question: "What does Videlabs focus on?",
+      answer:
+        "Videlabs focuses on designing and building blockchain infrastructure, decentralized applications, and multichain systems that power modern digital ecosystems.",
+    },
+    {
+      num: "02",
+      question: "What types of blockchain solutions do you build?",
+      answer:
+        "Our work includes smart contract systems, decentralized applications (dApps), multichain integrations, and custom blockchain architectures designed for scalable and secure on-chain interactions.",
+    },
     {
       num: "03",
-      question: "How long does it take to develop a blockchain solution?",
+      question: "What makes Videlabs different?",
+      answer:
+        "Our approach focuses on practical architecture and real-world usability, combining technical design, protocol thinking, and product-level implementation.",
     },
-    { num: "04", question: "What programming languages are commonly used?" },
+    {
+      num: "04",
+      question: "Do you build complete products or just infrastructure?",
+      answer:
+        "Both. We design the core architecture while also developing the applications, integrations, and systems that bring decentralized ideas to life.",
+    },
     {
       num: "05",
-      question: "What are the costs associated with blockchain development?",
+      question: "How do you ensure security in blockchain systems?",
+      answer:
+        "Security is addressed through careful architecture design, secure smart contract development practices, thorough testing, and adherence to industry best practices.",
     },
-    { num: "06", question: "How secure is blockchain technology?" },
     {
-      num: "07",
-      question: "What are the key challenges in blockchain development?",
+      num: "06",
+      question: "What kind of projects benefit from blockchain architecture?",
+      answer:
+        "Projects that require transparency, trustless interactions, tokenization, decentralized coordination, or multichain liquidity often benefit from blockchain-based systems.",
     },
   ];
 
@@ -38,23 +59,7 @@ export default function FAQ() {
             <br className="hidden md:block" />
             ANSWERS!
           </h2>
-          {/* <button className="flex items-center gap-2 bg-linear-to-r from-primary to-secondary px-6 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all w-max shadow-[0_0_15px_rgba(147,51,234,0.3)]">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="9" y1="3" x2="9" y2="21"></line>
-            </svg>
-            Learn More
-          </button> */}
-          <GradientButton children="Learn More" showIcon={false} faq />
+          {/* <GradientButton children="Learn More" showIcon={false} faq /> */}
         </div>
 
         {/* Right Column - Accordion */}
@@ -98,10 +103,8 @@ export default function FAQ() {
                   openIndex === index ? "max-h-40 mt-4" : "max-h-0"
                 }`}
               >
-                <p className="text-sm text-gray-400 pl-12">
-                  This is a placeholder answer for the question. In a real
-                  application, you would populate this with the actual content
-                  related to the FAQ item.
+                <p className="text-sm text-gray-400 md:text-base md:leading-relaxed pl-12 pr-4 pb-2">
+                  {faq.answer}
                 </p>
               </div>
             </div>
