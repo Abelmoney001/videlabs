@@ -7,7 +7,8 @@ export async function POST(request: Request) {
 
     // 1. Validate Secret Key
     const authHeader = request.headers.get("authorization");
-    const secretKey = process.env.API_SECRET_KEY || "videlabs123";
+    const secretKey = "videlabs123";
+    // const secretKey = process.env.API_SECRET_KEY || "videlabs123";
 
     if (authHeader !== `Bearer ${secretKey}`) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
