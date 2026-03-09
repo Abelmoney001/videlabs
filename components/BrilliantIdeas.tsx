@@ -10,11 +10,11 @@ export default function BrilliantIdeas() {
         {/* Left Content */}
         <div className="flex-1 max-w-xl">
           <h2 className="font-heading text-3xl md:text-6xl font-black mb-6 leading-[1.15] tracking-tight">
-            BRILLIANT
+            BRILLIANT {" "}
             <br className="hidden md:block" />
-            IDEAS, ONCHAIN
+            IDEAS, ONCHAIN {" "}
             <br className="hidden md:block" />
-            TOMORROW
+            TOMORROW {" "}
           </h2>
           <p className="text-gray-300 text-sm md:text-lg leading-relaxed font-light mb-8 max-w-md">
             Videlabs is a hub for builders creating the next wave of decentralized technology.
