@@ -17,27 +17,10 @@ export default function FeaturedProjects() {
             Development Lab
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-            Developing tools and integrations that enable seamless interaction across multiple blockchain ecosystems
+            Developing tools and integrations that enable seamless interaction across multiple blockchain ecosystems.
           </p>
-
-          {/* <button className="flex items-center gap-2 bg-linear-to-r from-primary to-secondary px-6 py-2.5 rounded-full text-sm font-semibold text-white hover:brightness-110 transition-all w-max group">
-            Read More
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-            >
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </button> */}
-          <GradientButton children="Lead More" showIcon={false} showArrow={true} />
+          
+          {/* <GradientButton children="Lead More" showIcon={false} showArrow={true} /> */}
         </div>
 
         {/* Right Content - Circle Graphic */}

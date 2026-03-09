@@ -18,7 +18,8 @@ import link from "@/public/images/link.svg";
 import base from "@/public/images/sponsors/base.svg";
 import bitcoin from "@/public/images/sponsors/bitcoin.svg";
 import bnb from "@/public/images/sponsors/bnb.svg";
-import ethereum from "@/public/images/sponsors/ethereum.svg";
+// import ethereum from "@/public/images/sponsors/ethereum.png";
+import ethereum from "@/public/images/sponsors/ethereum_.svg";
 import polygon from "@/public/images/sponsors/polygon.svg";
 import solana from "@/public/images/sponsors/solana.svg";
 

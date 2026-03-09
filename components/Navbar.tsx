@@ -24,17 +24,17 @@ export default function Navbar() {
           About Us
         </Link>
         <Link
-          href="#partners"
+          href="#podcast"
           className="hover:text-gray-300 transition-colors"
         >
-          Partners
+          Podcast
         </Link>
-        <Link
+        {/* <Link
           href="#projects"
           className="hover:text-gray-300 transition-colors"
         >
           Projects
-        </Link>
+        </Link> */}
       </div>
 
       <Link href="#contact">

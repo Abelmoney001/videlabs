@@ -20,7 +20,7 @@ export default function LogoMarquee() {
         {doubledLogos.map((logo, i) => (
           <div
             key={i}
-            className="flex-shrink-0 flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity cursor-pointer mx-12 lg:mx-24"
+            className="shrink-0 flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity cursor-pointer mx-12 lg:mx-24"
           >
             <div className="relative h-12 w-auto flex items-center justify-center">
               <Image

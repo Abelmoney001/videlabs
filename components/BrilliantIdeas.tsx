@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { brilliant_idea } from "@/utils/images";
 import GradientButton from "./GradientButton";
+import Link from "next/link";
 
 export default function BrilliantIdeas() {
   return (
@@ -16,9 +17,13 @@ export default function BrilliantIdeas() {
             TOMORROW
           </h2>
           <p className="text-gray-300 text-sm md:text-lg leading-relaxed font-light mb-8 max-w-md">
-            Videlabs is a hub for builders creating the next wave of decentralized technology. From blockchain infrastructure to intelligent on-chain systems, we are shaping the future of Web3.
+            Videlabs is a hub for builders creating the next wave of decentralized technology.
+            From blockchain infrastructure to intelligent on-chain systems, we are shaping the future of Web3.
           </p>
-          <GradientButton className="h-full py-2.5" />
+
+          <Link href="#contact">
+            <GradientButton className="h-full py-2.5" />
+          </Link>
         </div>
 
         {/* Right Content - Stats and Image */}
