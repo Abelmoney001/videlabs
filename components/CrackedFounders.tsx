@@ -9,9 +9,9 @@ export default function CrackedFounders() {
         {/* Left Content */}
         <div className="flex-1 max-w-xl">
           <h2 className="font-heading text-3xl md:text-5xl lg:text-[60px] font-black mb-6 leading-[1.1] tracking-tight">
-            THE CRACKED
+            THE CRACKED {" "}
             <br className="hidden md:block" />
-            FOUNDERS SHOW BY
+            FOUNDERS SHOW BY {" "}
             <br className="hidden md:block" />
             VIDELABS
           </h2>

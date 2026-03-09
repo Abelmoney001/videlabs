@@ -8,19 +8,21 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-20 bg-background text-white overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 w-full">
+      <div className="absolute inset-0 z-0 w-full pointer-events-none">
         <Image
           src={hero_bg}
           alt="Glowing purple background swoop"
           fill
-          className="object-cover w-full object-center md:object-contain relative top-20 md:top-32 -scale-y-100"
+          className="object-cover w-full object-center md:object-contain relative top-10 md:top-32 -scale-y-100"
           quality={100}
           priority
         />
+        {/* Mobile Dark Overlay */}
+        <div className="absolute inset-0 bg-black/85 md:hidden z-10" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[800px] mt-10 md:mt-1">
+      <div className="relative z-50 max-w-[800px] my-10 md:mt-1">
         <h1 className="font-heading text-[40px] md:text-[60px] lg:text-[76px] font-black leading-[1.05] tracking-tight mb-4">
           Ideas.
           <br />
