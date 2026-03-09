@@ -17,9 +17,10 @@ export default function FeaturedProjects() {
             Development Lab
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-            Developing tools and integrations that enable seamless interaction across multiple blockchain ecosystems.
+            Developing tools and integrations that enable seamless interaction
+            across multiple blockchain ecosystems.
           </p>
-          
+
           {/* <GradientButton children="Lead More" showIcon={false} showArrow={true} /> */}
         </div>
 
@@ -30,7 +31,7 @@ export default function FeaturedProjects() {
               src={cross_chain}
               alt="Cross Chain Link Protocol Graphic"
               fill
-              className="object-contain scale-110 md:scale-105"
+              className="object-contain scale-110 md:scale-105 animate-[spin_20s_linear_infinite]"
             />
           </div>
         </div>

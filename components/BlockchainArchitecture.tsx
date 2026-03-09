@@ -30,7 +30,7 @@ export default function BlockchainArchitecture() {
   ];
 
   return (
-    <section className="relative bg-black text-white md:py-24 px-6 md:px-12 lg:px-24 overflow-hidden min-h-screen flex flex-col justify-center">
+    <section className="relative bg-black text-white md:py-24 px-6 md:px-12 lg:px-24 overflow-hidden min-h-screen flex flex-col justify-center" id="about">
       {/* Background Graphic */}
       <div className="absolute right-[-10%] sm:right-0 bottom-40 w-[90%] max-w-[810px] aspect-square z-0 opacity-60 mix-blend-screen pointer-events-none">
         <Image
