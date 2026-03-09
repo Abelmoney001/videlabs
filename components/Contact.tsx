@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { discord, link, telegram, x } from "@/utils/images";
 import GradientButton from "./GradientButton";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Contact() {
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [status, setStatus] = useState<string>("");
   const projectTypes = [
     "Blockchain Wallet",
     "NFT Marketplace",
@@ -65,7 +71,38 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="space-y-12">
+        <form
+          className="space-y-12"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const form = e.currentTarget;
+            const data = new FormData(form);
+            data.append("projectTypes", selectedTypes.join(", "));
+            data.append("services", selectedServices.join(", "));
+            setStatus("LOADING");
+            try {
+              // Note: Ensure you replace 'YOUR_FORM_ID' with your actual Formspree ID
+              const response = await fetch(
+                "https://formspree.io/f/mdawabpa",
+                {
+                  method: "POST",
+                  body: data,
+                  headers: { Accept: "application/json" },
+                },
+              );
+              if (response.ok) {
+                setStatus("SUCCESS");
+                form.reset();
+                setSelectedTypes([]);
+                setSelectedServices([]);
+              } else {
+                setStatus("ERROR");
+              }
+            } catch (err) {
+              setStatus("ERROR");
+            }
+          }}
+        >
           {/* Tags Selection Area */}
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Project Types */}
@@ -81,7 +118,14 @@ export default function Contact() {
                   >
                     <button
                       type="button"
-                      className="w-full h-full px-4 py-2 rounded-lg bg-[linear-gradient(to_right,rgba(153,16,215,0.1),rgba(0,122,211,0.1))] text-xs text-white hover:bg-[linear-gradient(to_right,rgba(153,16,215,0.2),rgba(0,122,211,0.2))] transition-all font-medium backdrop-blur-sm"
+                      onClick={() =>
+                        setSelectedTypes((prev) =>
+                          prev.includes(type)
+                            ? prev.filter((t) => t !== type)
+                            : [...prev, type],
+                        )
+                      }
+                      className={`w-full h-full px-4 py-2 rounded-lg text-xs text-white transition-all font-medium backdrop-blur-sm ${selectedTypes.includes(type) ? "bg-[linear-gradient(to_right,rgba(153,16,215,0.4),rgba(0,122,211,0.4))]" : "bg-[linear-gradient(to_right,rgba(153,16,215,0.1),rgba(0,122,211,0.1))] hover:bg-[linear-gradient(to_right,rgba(153,16,215,0.2),rgba(0,122,211,0.2))]"}`}
                     >
                       {type}
                     </button>
@@ -103,7 +147,14 @@ export default function Contact() {
                   >
                     <button
                       type="button"
-                      className="w-full h-full px-4 py-2 rounded-lg bg-[linear-gradient(to_right,rgba(254,201,36,0.05),rgba(254,81,99,0.05))] text-xs text-white hover:bg-[linear-gradient(to_right,rgba(254,201,36,0.15),rgba(254,81,99,0.15))] transition-all font-medium backdrop-blur-sm"
+                      onClick={() =>
+                        setSelectedServices((prev) =>
+                          prev.includes(service)
+                            ? prev.filter((s) => s !== service)
+                            : [...prev, service],
+                        )
+                      }
+                      className={`w-full h-full px-4 py-2 rounded-lg text-xs text-white transition-all font-medium backdrop-blur-sm ${selectedServices.includes(service) ? "bg-[linear-gradient(to_right,rgba(254,201,36,0.25),rgba(254,81,99,0.25))]" : "bg-[linear-gradient(to_right,rgba(254,201,36,0.05),rgba(254,81,99,0.05))] hover:bg-[linear-gradient(to_right,rgba(254,201,36,0.15),rgba(254,81,99,0.15))]"}`}
                     >
                       {service}
                     </button>
@@ -114,13 +165,18 @@ export default function Contact() {
           </div>
 
           {/* Form Inputs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pt-8" id="contact">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pt-8"
+            id="contact"
+          >
             <div className="space-y-2">
               <label className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">
                 Full Name
               </label>
               <input
                 type="text"
+                name="name"
+                required
                 className="w-full bg-transparent border-b border-white/10 pb-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
                 placeholder=" "
               />
@@ -131,6 +187,8 @@ export default function Contact() {
               </label>
               <input
                 type="email"
+                name="email"
+                required
                 className="w-full bg-transparent border-b border-white/10 pb-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
                 placeholder=" "
               />
@@ -141,6 +199,7 @@ export default function Contact() {
               </label>
               <input
                 type="text"
+                name="x_username"
                 className="w-full bg-transparent border-b border-white/10 pb-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
                 placeholder=" "
               />
@@ -151,6 +210,7 @@ export default function Contact() {
               </label>
               <input
                 type="text"
+                name="organization"
                 className="w-full bg-transparent border-b border-white/10 pb-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
                 placeholder=" "
               />
@@ -162,17 +222,32 @@ export default function Contact() {
               Write About Your Idea
             </label>
             <textarea
+              name="message"
+              required
               rows={3}
               className="w-full bg-transparent border-b border-white/10 pb-2 text-sm text-white focus:outline-none focus:border-primary transition-colors resize-none"
               placeholder=" "
             ></textarea>
           </div>
 
-          <div className="pt-8">
+          <div className="pt-8 w-max">
+            {status === "SUCCESS" && (
+              <p className="text-green-400 mb-4 text-sm font-medium">
+                Thanks for reaching out! We will get back to you shortly.
+              </p>
+            )}
+            {status === "ERROR" && (
+              <p className="text-red-400 mb-4 text-sm font-medium">
+                Oops! There was a problem submitting your form. Please try
+                again.
+              </p>
+            )}
             <GradientButton
-              children="Send Message"
-              showIcon={false}
-              showArrow={true}
+              type="submit"
+              disabled={status === "LOADING"}
+              children={status === "LOADING" ? "Sending..." : "Send Message"}
+              showIcon={status !== "LOADING"}
+              showArrow={status !== "LOADING"}
             />
           </div>
         </form>
