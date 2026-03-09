@@ -24,7 +24,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="bg-black md:py-24 px-6 md:px-12 lg:px-24" id="contact">
+    <section className="bg-black md:py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto bg-white/5 rounded-[40px] p-4 py-8 md:py-16 md:p-16 border border-white/10 shadow-2xl">
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8">
@@ -114,7 +114,7 @@ export default function Contact() {
           </div>
 
           {/* Form Inputs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pt-8" id="contact">
             <div className="space-y-2">
               <label className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">
                 Full Name
@@ -137,10 +137,10 @@ export default function Contact() {
             </div>
             <div className="space-y-2">
               <label className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">
-                Phone Number
+                X (Twitter) Username
               </label>
               <input
-                type="tel"
+                type="text"
                 className="w-full bg-transparent border-b border-white/10 pb-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
                 placeholder=" "
               />
