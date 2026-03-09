@@ -51,13 +51,13 @@ export default function FAQ() {
         {/* Left Column - Heading */}
         <div className="flex-1 max-w-xl">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-[64px] font-black leading-[1.1] tracking-tight mb-8">
-            GOT
+            GOT {" "}
             <br className="hidden md:block" />
-            QUESTIONS?
+            QUESTIONS? {" "}
             <br className="hidden md:block" />
-            WE'VE GOT
+            WE'VE GOT {" "}
             <br className="hidden md:block" />
-            ANSWERS!
+            ANSWERS! {" "}
           </h2>
           {/* <GradientButton children="Learn More" showIcon={false} faq /> */}
         </div>
