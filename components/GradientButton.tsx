@@ -1,56 +1,65 @@
 import Image from "next/image";
+import Link from "next/link";
 import { chat } from "@/utils/images";
-import { ArrowUpRight, BookText } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface GradientButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   className?: string;
-  wrapperClassName?: string;
   showIcon?: boolean;
   showArrow?: boolean;
-  faq?: boolean;
+  /** Renders a link instead of a button. External URLs open in a new tab. */
+  href?: string;
+  /** "solid" is the filled paper pill; "outline" carries the spectrum on its edge. */
+  variant?: "solid" | "outline";
 }
 
 export default function GradientButton({
   children = "Get In Touch",
-  className = "h-11",
-  wrapperClassName = "",
+  className = "",
   showIcon = true,
   showArrow = false,
-  faq = false,
-  asDiv = false,
+  href,
+  variant = "solid",
   ...props
-}: GradientButtonProps & { asDiv?: boolean; [key: string]: any }) {
+}: GradientButtonProps) {
   const content = (
     <>
-      {showIcon && <Image src={chat} alt="Chat" width={18} height={18} />}
-      {faq && <BookText color="#fff" size={18} />}
+      {showIcon && <Image src={chat} alt="" width={16} height={16} className={variant === "solid" ? "invert" : ""} />}
       {children}
       {showArrow && (
         <ArrowUpRight
-          color="#fff"
           size={18}
-          className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+          aria-hidden
+          className="transition-transform duration-300 ease-out-quart group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
         />
       )}
     </>
   );
 
-  const innerClass = `flex items-center justify-center gap-2 bg-[linear-gradient(to_right,#9910D7,#007AD3)] w-full h-full px-6 py-3.5 rounded-full text-sm font-medium hover:brightness-110 transition-all ${className}`;
+  const surface =
+    variant === "solid"
+      ? "bg-paper text-night hover:bg-white"
+      : "spectrum-edge text-paper hover:bg-white/[0.06]";
+
+  const innerClass = `group inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60 ${surface} ${className}`;
+
+  if (href) {
+    const external = /^https?:\/\//.test(href);
+    return (
+      <Link
+        href={href}
+        className={innerClass}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
+        {content}
+      </Link>
+    );
+  }
 
   return (
-    <div
-      className={`w-max rounded-full p-px bg-[linear-gradient(to_right,#FEC924,#FE5163)] transition-shadow cursor-pointer ${wrapperClassName}`}
-    >
-      {asDiv ? (
-        <div className={innerClass} {...(props as any)}>
-          {content}
-        </div>
-      ) : (
-        <button className={innerClass} {...props}>
-          {content}
-        </button>
-      )}
-    </div>
+    <button className={innerClass} {...props}>
+      {content}
+    </button>
   );
 }

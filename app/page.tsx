@@ -1,25 +1,29 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import BrilliantIdeas from "@/components/BrilliantIdeas";
-import LogoMarquee from "@/components/LogoMarquee";
+import Ecosystem from "@/components/Ecosystem";
 import FeaturedProjects from "@/components/FeaturedProjects";
-import CrackedFounders from "@/components/CrackedFounders";
 import BlockchainArchitecture from "@/components/BlockchainArchitecture";
+import CrackedFounders from "@/components/CrackedFounders";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black font-sans selection:bg-primary/30 pb-24">
+    <>
       <Navbar />
-      <Hero />
-      <BrilliantIdeas />
-      <LogoMarquee />
-      <FeaturedProjects />
-      <CrackedFounders />
-      <BlockchainArchitecture />
-      <FAQ />
-      <Contact />
-    </main>
+      <main className="min-h-screen overflow-x-clip">
+        <Hero />
+        <BrilliantIdeas />
+        <Ecosystem />
+        <FeaturedProjects />
+        <BlockchainArchitecture />
+        <CrackedFounders />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }

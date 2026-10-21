@@ -1,56 +1,75 @@
 import Image from "next/image";
-import { hero_bg } from "@/utils/images";
 import { ArrowUpRight } from "lucide-react";
+import { chainstreets_logo, videpay_mark } from "@/utils/images";
 import GradientButton from "./GradientButton";
-import Link from "next/link";
+import HeroEye from "./HeroEye";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-20 bg-background text-white overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 w-full pointer-events-none">
-        <Image
-          src={hero_bg}
-          alt="Glowing purple background swoop"
-          fill
-          className="object-cover w-full object-center md:object-contain relative top-10 md:top-32 -scale-y-100"
-          quality={100}
-          priority
-        />
-        {/* Mobile Dark Overlay */}
-        <div className="absolute inset-0 bg-black/85 md:hidden z-10" />
+    <section className="relative isolate overflow-hidden pt-18">
+      <div className="pointer-events-none absolute -z-10 top-16 -right-[22%] w-[100%] max-w-[600px] sm:-right-[12%] sm:max-w-[680px] lg:top-1/2 lg:-right-[6%] lg:w-[64vw] lg:max-w-[1040px] lg:-translate-y-[52%]">
+        <HeroEye className="aspect-square w-full" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-50 max-w-[800px] my-10 md:mt-1">
-        <h1 className="font-heading text-[40px] md:text-[60px] lg:text-[76px] font-black leading-[1.05] tracking-tight mb-4">
-          Ideas.
-          <br />
-          Architecture.
-          <br />
-          Decentralized Systems.
+      <div className="shell flex min-h-[calc(100svh-4.5rem-4.75rem)] flex-col justify-end pt-[min(92vw,24rem)] pb-14 sm:pt-[min(66vw,28rem)] lg:justify-center lg:py-20">
+        <h1 className="font-heading text-[clamp(2.6rem,6.4vw,6.25rem)] leading-[0.94] tracking-[-0.005em]">
+          <span className="hero-line block type-outline" style={{ animationDelay: "450ms" }}>
+            Ideas.
+          </span>
+          <span className="hero-line block type-hatch" style={{ animationDelay: "600ms" }}>
+            Architecture.
+          </span>
+          <span className="hero-line block max-w-[11ch]" style={{ animationDelay: "750ms" }}>
+            Decentralized Systems.
+          </span>
         </h1>
 
-        <p className="text-base md:text-lg text-gray-200 max-w-[600px] mb-6 leading-relaxed font-light">
+        <p
+          className="hero-fade mt-8 max-w-[33rem] text-base leading-relaxed text-haze sm:text-lg"
+          style={{ animationDelay: "1000ms" }}
+        >
           VIDELABS is a RESEARCH AND DEVELOPMENT Lab building next-generation
           infrastructure, protocols, and developer tools on-chain.
         </p>
 
-        <div className="flex flex-wrap items-center gap-4 mb-5">
-          {/* <GradientButton children="Explore Our Work" showIcon={false} /> */}
+        <div className="hero-fade mt-10 flex flex-wrap gap-3" style={{ animationDelay: "1100ms" }}>
+          <GradientButton href="#contact" showIcon={false} showArrow className="h-12 px-7">
+            Contact Us
+          </GradientButton>
+          <GradientButton href="#ecosystem" variant="outline" showIcon={false} className="h-12 px-7">
+            Explore Our Work
+          </GradientButton>
+        </div>
+      </div>
 
-          <Link href="#contact" className="block w-full sm:w-auto">
-            <div className="rounded-full p-px bg-[linear-gradient(to_right,#FFE500,#2EC64F,#3A6CFD,#FF28B7)] transition-shadow cursor-pointer">
-              <div className="group bg-black relative flex justify-center items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold transition-colors h-full w-full">
-                Contact Us
-                <ArrowUpRight
-                  color="#fff"
-                  size={18}
-                  className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </div>
-            </div>
-          </Link>
+      <div className="border-t border-line bg-night/70 backdrop-blur-sm">
+        <div className="shell flex min-h-19 flex-wrap items-center gap-x-10 gap-y-3 py-5">
+          <p className="text-sm text-dim">Parent company of</p>
+          <ul className="flex flex-wrap items-center gap-x-10 gap-y-3">
+            <li>
+              <a
+                href="https://videpay.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2.5 text-paper/90 transition-colors hover:text-paper"
+              >
+                <Image src={videpay_mark} alt="" className="size-6" />
+                <span className="font-videpay text-lg font-semibold tracking-[-0.02em]">Videpay</span>
+                <ArrowUpRight size={15} aria-hidden className="text-dim transition-colors group-hover:text-paper" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://chainstreets.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2.5 opacity-90 transition-opacity hover:opacity-100"
+              >
+                <Image src={chainstreets_logo} alt="Chain Streets" className="h-5 w-auto" />
+                <ArrowUpRight size={15} aria-hidden className="text-dim transition-colors group-hover:text-paper" />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
