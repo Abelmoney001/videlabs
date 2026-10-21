@@ -30,6 +30,27 @@ const fieldClass =
 
 const labelClass = "mb-2 block text-sm text-haze";
 
+const CONTACT_EMAIL = "contact@videlabs.io";
+
+// Submissions go straight to the Videlabs inbox through the visitor's own email app.
+function buildMailto(data: FormData, types: string[], services: string[]) {
+  const field = (key: string) => String(data.get(key) ?? "").trim();
+  const details = [
+    ["Full Name", field("name")],
+    ["Email Address", field("email")],
+    ["X (Twitter) Username", field("x_username")],
+    ["Organization", field("organization")],
+    ["Your Project's Type", types.join(", ")],
+    ["Services You Need", services.join(", ")],
+  ]
+    .filter(([, value]) => value)
+    .map(([label, value]) => `${label}: ${value}`);
+
+  const subject = `Project inquiry from ${field("name")}`;
+  const body = [...details, "", field("message")].join("\n");
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 function toggle(list: string[], value: string) {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 }
@@ -76,7 +97,7 @@ function ChipGroup({
 export default function Contact() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [status, setStatus] = useState<string>("");
+  const [opened, setOpened] = useState(false);
 
   return (
     <section id="contact" className="py-20 md:py-28">
@@ -97,10 +118,10 @@ export default function Contact() {
                   <dt className="text-sm text-dim">Send Us An Email</dt>
                   <dd className="mt-1.5">
                     <a
-                      href="mailto:contact@videlabs.io"
+                      href={`mailto:${CONTACT_EMAIL}`}
                       className="text-lg text-paper underline decoration-line underline-offset-4 transition-colors hover:decoration-paper"
                     >
-                      contact@videlabs.io
+                      {CONTACT_EMAIL}
                     </a>
                   </dd>
                 </div>
@@ -123,30 +144,10 @@ export default function Contact() {
 
             <form
               className="space-y-12 pt-12"
-              onSubmit={async (e) => {
+              onSubmit={(e) => {
                 e.preventDefault();
-                const form = e.currentTarget;
-                const data = new FormData(form);
-                data.append("projectTypes", selectedTypes.join(", "));
-                data.append("services", selectedServices.join(", "));
-                setStatus("LOADING");
-                try {
-                  const response = await fetch("https://formspree.io/f/mdawabpa", {
-                    method: "POST",
-                    body: data,
-                    headers: { Accept: "application/json" },
-                  });
-                  if (response.ok) {
-                    setStatus("SUCCESS");
-                    form.reset();
-                    setSelectedTypes([]);
-                    setSelectedServices([]);
-                  } else {
-                    setStatus("ERROR");
-                  }
-                } catch {
-                  setStatus("ERROR");
-                }
+                window.location.href = buildMailto(new FormData(e.currentTarget), selectedTypes, selectedServices);
+                setOpened(true);
               }}
             >
               <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
@@ -204,23 +205,20 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-                <GradientButton
-                  type="submit"
-                  disabled={status === "LOADING"}
-                  showIcon={status !== "LOADING"}
-                  showArrow={status !== "LOADING"}
-                  className="h-12 self-start px-7"
-                >
-                  {status === "LOADING" ? "Sending..." : "Send Message"}
+                <GradientButton type="submit" showArrow className="h-12 self-start px-7">
+                  Send Message
                 </GradientButton>
-                <p role="status" aria-live="polite" className="text-sm">
-                  {status === "SUCCESS" && (
-                    <span className="text-spectrum-green">Thanks for reaching out! We will get back to you shortly.</span>
-                  )}
-                  {status === "ERROR" && (
-                    <span className="text-spectrum-rose">
-                      Oops! There was a problem submitting your form. Please try again.
-                    </span>
+                <p role="status" aria-live="polite" className="max-w-[26rem] text-sm text-haze">
+                  {opened ? (
+                    <>
+                      Your email app should open with your message ready to send. If it doesn&apos;t, write to{" "}
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-paper underline underline-offset-4">
+                        {CONTACT_EMAIL}
+                      </a>
+                      .
+                    </>
+                  ) : (
+                    "Opens your email app with your details filled in."
                   )}
                 </p>
               </div>
