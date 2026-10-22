@@ -1,38 +1,63 @@
 import Image from "next/image";
-import { cross_chain } from "@/utils/images";
-import GradientButton from "./GradientButton";
+import { base, bitcoin, bnb, cross_chain, ethereum, polygon, solana } from "@/utils/images";
+
+const chains = [
+  // Ethereum and Base ship dark artwork, so they are shown as white silhouettes.
+  { src: ethereum, alt: "Ethereum", silhouette: true },
+  { src: base, alt: "Base", silhouette: true },
+  { src: bitcoin, alt: "Bitcoin" },
+  { src: bnb, alt: "BNB Chain" },
+  { src: polygon, alt: "Polygon" },
+  { src: solana, alt: "Solana" },
+];
 
 export default function FeaturedProjects() {
   return (
-    <section className="bg-black py-24 px-6 md:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto bg-white/5 rounded-[40px] border border-white/5 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative shadow-2xl">
-        {/* Left Content */}
-        <div className="flex-1 relative z-10 max-w-md">
-          <p className="text-xs font-semibold tracking-widest text-gray-400 mb-4 uppercase">
-            Featured Projects
-          </p>
-          <h2 className="font-heading text-3xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tight text-white uppercase">
-            Multichain
-            <br />
-            Development Lab
-          </h2>
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-            Developing tools and integrations that enable seamless interaction
-            across multiple blockchain ecosystems.
-          </p>
+    <section id="projects" className="py-20 md:py-28">
+      <div className="shell">
+        <div className="overflow-hidden rounded-[28px] bg-pupil ring-1 ring-line">
+          <div className="grid items-center gap-10 p-7 sm:p-10 lg:grid-cols-2 lg:gap-6 lg:p-16">
+            <div>
+              <p className="text-sm text-haze">Featured Projects</p>
+              <h2 className="mt-4 font-heading text-[clamp(2.2rem,5vw,4.25rem)] leading-[0.95]">
+                Multichain
+                <br />
+                Development Lab
+              </h2>
+              <p className="mt-6 max-w-[28rem] text-lg leading-relaxed text-haze">
+                Developing tools and integrations that enable seamless interaction across multiple blockchain
+                ecosystems.
+              </p>
+            </div>
 
-          {/* <GradientButton children="Lead More" showIcon={false} showArrow={true} /> */}
-        </div>
+            <div className="relative mx-auto aspect-[511/488] w-full max-w-[460px]">
+              <Image
+                src={cross_chain}
+                alt="Cross-chain protocol diagram: the Videlabs mark linked to Bitcoin, Ethereum, Solana, Polygon, BNB Chain and other networks"
+                fill
+                sizes="(min-width: 1024px) 460px, 90vw"
+                className="object-contain"
+              />
+            </div>
+          </div>
 
-        {/* Right Content - Circle Graphic */}
-        <div className="flex-1 relative w-full flex justify-center items-center min-h-[300px]">
-          <div className="relative w-full max-w-[500px] aspect-square">
-            <Image
-              src={cross_chain}
-              alt="Cross Chain Link Protocol Graphic"
-              fill
-              className="object-contain scale-110 md:scale-105 animate-[spin_20s_linear_infinite]"
-            />
+          <div className="border-t border-line px-7 py-8 sm:px-10 lg:px-16">
+            <p className="text-sm text-dim">Chains we build on</p>
+            <ul className="mt-5 grid grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
+              {chains.map((chain) => (
+                <li key={chain.alt} className="flex h-10 items-center">
+                  <Image
+                    src={chain.src}
+                    alt={chain.alt}
+                    className={`h-full w-auto max-w-full object-contain object-left opacity-70 transition duration-300 hover:opacity-100 ${
+                      chain.silhouette
+                        ? "brightness-0 invert"
+                        : "mix-blend-screen grayscale brightness-[1.8] hover:grayscale-0 hover:brightness-100"
+                    }`}
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
