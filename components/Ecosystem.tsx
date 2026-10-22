@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight, Check } from "lucide-react";
-import { chainstreets_logo, chainstreets_symbol, videpay_mark } from "@/utils/images";
+import { chainstreets_logo, chainstreets_symbol, videpay_mark, videpay_otter } from "@/utils/images";
 
 const videpayFeatures = [
   "Settlement in seconds",
@@ -10,21 +10,6 @@ const videpayFeatures = [
 ];
 
 const chainStreetsFeatures = ["Plays in your browser", "An original, fictional world"];
-
-// Videpay's "confluence" mark, enlarged: many rails merge into one settlement.
-function Confluence() {
-  return (
-    <svg viewBox="0 0 40 40" className="h-full w-full" aria-hidden="true" focusable="false">
-      <g stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" fill="none">
-        <path d="M5 10 C 12 10, 15 20, 21 20" />
-        <path d="M5 20 H 21" />
-        <path d="M5 30 C 12 30, 15 20, 21 20" />
-        <path d="M21 20 H 28" />
-      </g>
-      <rect x="28.5" y="16.5" width="7" height="7" rx="1.8" fill="currentColor" />
-    </svg>
-  );
-}
 
 export default function Ecosystem() {
   return (
@@ -48,10 +33,6 @@ export default function Ecosystem() {
             rel="noopener noreferrer"
             className="group relative flex min-h-[36rem] flex-col overflow-hidden rounded-[28px] bg-videpay-deep p-7 ring-1 ring-white/10 transition-shadow hover:ring-videpay-electric/60 sm:p-10"
           >
-            <div className="pointer-events-none absolute top-20 -right-[8%] w-[62%] max-w-80 text-videpay-electric/40 transition-colors duration-500 group-hover:text-videpay-electric/70 sm:top-14">
-              <Confluence />
-            </div>
-
             <div className="relative flex items-center justify-between gap-4">
               <span className="flex items-center gap-2.5">
                 <Image src={videpay_mark} alt="" className="size-8" />
@@ -63,10 +44,20 @@ export default function Ecosystem() {
               </span>
             </div>
 
-            <div className="relative mt-auto pt-56 sm:pt-48">
+            {/* Videpay's otter: it keeps buyer and merchant linked until a payment settles. */}
+            <Image
+              src={videpay_otter}
+              alt=""
+              sizes="(min-width: 640px) 16rem, 52vw"
+              className="pointer-events-none mt-6 ml-auto w-[52%] max-w-[16rem] transition-transform duration-500 ease-out-quart group-hover:-translate-y-1.5"
+            />
+
+            <div className="relative mt-auto pt-8">
               <p className="text-sm text-[#9db0f7]">On-chain payment infrastructure</p>
               <h3 className="mt-3 max-w-[16ch] font-videpay font-semibold text-[clamp(2rem,3.4vw,2.9rem)] leading-[1.02] tracking-[-0.03em]">
-                Every chain. Every wallet. One settlement.
+                <span className="block">Any wallet.</span>
+                <span className="block">Any exchange.</span>
+                <span className="block">One settlement.</span>
               </h3>
               <p className="mt-5 max-w-[30rem] leading-relaxed text-white/75">
                 The non-custodial payment layer for businesses that run on blockchain money — checkout,

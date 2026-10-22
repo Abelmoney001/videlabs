@@ -10,7 +10,8 @@ import app_maintenance from "@/public/images/app+maontenace.svg";
 import x from "@/public/images/x.svg";
 
 // Ecosystem
-import videpay_mark from "@/public/images/ecosystem/videpay-mark-white.svg";
+import videpay_mark from "@/public/images/ecosystem/videpay-otter.svg";
+import videpay_otter from "@/public/images/ecosystem/videpay-otter-wave.png";
 import chainstreets_logo from "@/public/images/ecosystem/chainstreets-logo-dark.svg";
 import chainstreets_symbol from "@/public/images/ecosystem/chainstreets-symbol.svg";
 
@@ -34,6 +35,7 @@ export {
   app_maintenance,
   x,
   videpay_mark,
+  videpay_otter,
   chainstreets_logo,
   chainstreets_symbol,
   base,
