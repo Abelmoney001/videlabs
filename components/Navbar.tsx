@@ -8,11 +8,11 @@ import { mark, wordmark } from "@/utils/images";
 import GradientButton from "./GradientButton";
 
 const links = [
-  { href: "#ecosystem", label: "Ecosystem" },
-  { href: "#about", label: "About Us" },
-  { href: "#services", label: "Services" },
-  { href: "#podcast", label: "Podcast" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#ecosystem", label: "Ecosystem" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#services", label: "Services" },
+  { href: "/#podcast", label: "Podcast" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Navbar() {
@@ -59,7 +59,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <span className="hidden sm:block">
-            <GradientButton href="#contact" />
+            <GradientButton href="/#contact" />
           </span>
           <button
             type="button"
@@ -88,7 +88,7 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-5 pb-3 sm:hidden" onClick={() => setOpen(false)}>
-            <GradientButton href="#contact" className="w-full" />
+            <GradientButton href="/#contact" className="w-full" />
           </li>
         </ul>
       </div>

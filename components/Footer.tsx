@@ -14,10 +14,10 @@ const columns = [
     {
         title: "Lab",
         links: [
-            { href: "#about", label: "About Us" },
-            { href: "#services", label: "Services" },
-            { href: "#podcast", label: "Podcast" },
-            { href: "#faq", label: "FAQ" },
+            { href: "/#about", label: "About Us" },
+            { href: "/#services", label: "Services" },
+            { href: "/#podcast", label: "Podcast" },
+            { href: "/#faq", label: "FAQ" },
         ],
     },
     {
@@ -106,7 +106,21 @@ export default function Footer() {
                         © {new Date().getFullYear()} Videlabs. All rights
                         reserved.
                     </p>
-                    <p>Parent company of Videpay and Chain Streets.</p>
+                    <div className="flex flex-wrap gap-x-6 gap-y-2">
+                        <Link
+                            href="/terms"
+                            className="transition-colors hover:text-paper"
+                        >
+                            Terms
+                        </Link>
+                        <Link
+                            href="/privacy"
+                            className="transition-colors hover:text-paper"
+                        >
+                            Privacy
+                        </Link>
+                        <p>Parent company of Videpay and Chain Streets.</p>
+                    </div>
                 </div>
             </div>
         </footer>
