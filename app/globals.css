@@ -36,11 +36,17 @@
   --color-streets-ink: #0b1020;
   --color-streets-teal: #14c8b4;
   --color-streets-yellow: #ffc629;
+  --color-unipus-night: #0b0826;
+  --color-unipus-deep: #14103a;
+  --color-unipus-iris: #7065ff;
+  --color-unipus-lavender: #c7c6ff;
+  --color-unipus-orchid: #d953ff;
 
   --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
   --font-heading: 'The Bold Font', var(--font-schibsted), sans-serif;
   --font-videpay: var(--font-bricolage), var(--font-schibsted), sans-serif;
   --font-streets: var(--font-chakra), var(--font-schibsted), sans-serif;
+  --font-unipus: var(--font-bricolage), var(--font-schibsted), sans-serif;
 
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }

@@ -12,7 +12,7 @@ const schibsted = Schibsted_Grotesk({
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["600", "800"],
   display: "swap",
 });
 
@@ -25,10 +25,10 @@ const chakra = Chakra_Petch({
 
 export const metadata: Metadata = {
   title: "Videlabs | Ideas. Architecture. Decentralized Systems.",
-  description: "VIDELABS is a RESEARCH AND DEVELOPMENT Lab building next-generation infrastructure, protocols, and developer tools on-chain. Parent company of Videpay and Chain Streets.",
+  description: "VIDELABS is a RESEARCH AND DEVELOPMENT Lab building next-generation infrastructure, protocols, and developer tools on-chain. Parent company of Videpay, Chain Streets and Unipus.",
   openGraph: {
     title: "Videlabs | Ideas. Architecture. Decentralized Systems.",
-    description: "A research and development lab building next-generation infrastructure, protocols, and developer tools on-chain. Parent company of Videpay and Chain Streets.",
+    description: "A research and development lab building next-generation infrastructure, protocols, and developer tools on-chain. Parent company of Videpay, Chain Streets and Unipus.",
     siteName: "Videlabs",
     type: "website",
   },

@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { ArrowUpRight, Check } from "lucide-react";
-import { chainstreets_logo, chainstreets_symbol, videpay_mark, videpay_otter } from "@/utils/images";
+import {
+  chainstreets_logo,
+  chainstreets_symbol,
+  unipus_mark,
+  unipus_mascot,
+  videpay_mark,
+  videpay_otter,
+} from "@/utils/images";
 
 const videpayFeatures = [
   "Settlement in seconds",
@@ -11,6 +18,8 @@ const videpayFeatures = [
 
 const chainStreetsFeatures = ["Plays in your browser", "An original, fictional world"];
 
+const unipusFeatures = ["Reputation before launch", "A holding cap on every buyer", "Creator Club", "On Base"];
+
 export default function Ecosystem() {
   return (
     <section id="ecosystem" className="border-t border-line py-20 md:py-28">
@@ -20,8 +29,9 @@ export default function Ecosystem() {
             Built by Videlabs
           </h2>
           <p className="max-w-[32rem] text-lg leading-relaxed text-haze lg:col-span-5">
-            Videlabs is the parent company of Videpay and Chain Streets: one moves money on-chain,
-            the other is a city that runs on its own chain.
+            Videlabs is the parent company of Videpay, Chain Streets and Unipus: one moves money on-chain,
+            one is a city that runs on its own chain, and one is where that city&apos;s creators launch fan
+            tokens. All three are coming soon.
           </p>
         </div>
 
@@ -53,7 +63,11 @@ export default function Ecosystem() {
             />
 
             <div className="relative mt-auto pt-8">
-              <p className="text-sm text-[#9db0f7]">On-chain payment infrastructure</p>
+              <p className="inline-flex items-center gap-2 rounded-full bg-videpay-electric/15 px-3 py-1 text-sm text-[#9db0f7]">
+                <span className="size-1.5 rounded-full bg-[#9db0f7]" aria-hidden />
+                Coming soon
+              </p>
+              <p className="mt-4 text-sm text-[#9db0f7]">On-chain payment infrastructure</p>
               <h3 className="mt-3 max-w-[16ch] font-videpay font-semibold text-[clamp(2rem,3.4vw,2.9rem)] leading-[1.02] tracking-[-0.03em]">
                 <span className="block">Any wallet.</span>
                 <span className="block">Any exchange.</span>
@@ -114,6 +128,70 @@ export default function Ecosystem() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </a>
+
+          {/* Unipus, on its night ground with its iris and orchid, and the mascot used as drawn */}
+          <a
+            href="https://unipus.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex flex-col overflow-hidden rounded-[28px] bg-unipus-night p-7 ring-1 ring-white/10 transition-shadow hover:ring-unipus-iris/60 sm:p-10 lg:col-span-2"
+          >
+            <div
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_90%_at_85%_40%,color-mix(in_srgb,var(--color-unipus-iris)_28%,transparent),transparent_70%)]"
+              aria-hidden
+            />
+
+            <div className="relative flex items-center justify-between gap-4">
+              <span className="flex items-center gap-2">
+                <Image src={unipus_mark} alt="" className="size-9" />
+                <span className="font-unipus text-2xl font-semibold tracking-[-0.02em]">Unipus</span>
+              </span>
+              <span className="flex items-center gap-1.5 text-sm text-white/70 transition-colors group-hover:text-white">
+                unipus.io
+                <ArrowUpRight size={16} aria-hidden />
+              </span>
+            </div>
+
+            <div className="relative mt-10 grid items-center gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-7">
+                <p className="inline-flex items-center gap-2 rounded-full bg-unipus-orchid/15 px-3 py-1 text-sm text-unipus-orchid">
+                  <span className="size-1.5 rounded-full bg-unipus-orchid" aria-hidden />
+                  Coming soon
+                </p>
+                <p className="mt-4 text-sm text-unipus-lavender">Fan tokens and a Creator Club</p>
+                <h3 className="mt-3 font-unipus font-extrabold text-[clamp(2.1rem,3.8vw,3.25rem)] leading-[0.98] tracking-[-0.03em]">
+                  <span className="block">One person.</span>
+                  <span className="block">One identity.</span>
+                  <span className="block">No whales.</span>
+                </h3>
+                <p className="mt-5 max-w-[34rem] leading-relaxed text-white/75">
+                  Where creators and communities from Chain Streets launch fan tokens their fans can trust. Every
+                  buyer is one verified person, every holding is capped, and only players with reputation from the
+                  game can launch. Beside it, a Creator Club where social creators do tasks for points.
+                </p>
+                <ul className="mt-7 flex flex-wrap gap-2 text-sm">
+                  {unipusFeatures.map((feature) => (
+                    <li
+                      key={feature}
+                      className="rounded-full border border-unipus-iris/50 px-3 py-1 text-unipus-lavender"
+                    >
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 max-w-[34rem] text-xs leading-relaxed text-white/50">
+                  18+, and only where the law allows. Tokens are risky and can lose all their value. Nothing here
+                  is financial advice.
+                </p>
+              </div>
+              <Image
+                src={unipus_mascot}
+                alt=""
+                sizes="(min-width: 1024px) 22rem, 60vw"
+                className="pointer-events-none mx-auto w-[60%] max-w-[22rem] transition-transform duration-500 ease-out-quart group-hover:-translate-y-1.5 lg:col-span-5 lg:w-full"
+              />
             </div>
           </a>
         </div>

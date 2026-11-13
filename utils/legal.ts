@@ -301,7 +301,7 @@ export const privacy: LegalDocument = {
             blocks: [
                 {
                     kind: "p",
-                    text: "Our fonts are served from this website, not from a font service, so loading them doesn't send your data to anyone else. Links to X, Videpay and Chain Streets take you to their own sites, where their own privacy policies apply.",
+                    text: "Our fonts are served from this website, not from a font service, so loading them doesn't send your data to anyone else. Links to X, Videpay, Chain Streets and Unipus take you to their own sites, where their own privacy policies apply.",
                 },
             ],
         },

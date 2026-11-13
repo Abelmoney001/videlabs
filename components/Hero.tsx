@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { chainstreets_logo, videpay_mark } from "@/utils/images";
+import { chainstreets_logo, unipus_mark, videpay_mark } from "@/utils/images";
 import GradientButton from "./GradientButton";
 import HeroEye from "./HeroEye";
 
@@ -69,7 +69,20 @@ export default function Hero() {
                 <ArrowUpRight size={15} aria-hidden className="text-dim transition-colors group-hover:text-paper" />
               </a>
             </li>
+            <li>
+              <a
+                href="https://unipus.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 text-paper/90 transition-colors hover:text-paper"
+              >
+                <Image src={unipus_mark} alt="" className="size-7" />
+                <span className="font-unipus text-lg font-semibold tracking-[-0.02em]">Unipus</span>
+                <ArrowUpRight size={15} aria-hidden className="text-dim transition-colors group-hover:text-paper" />
+              </a>
+            </li>
           </ul>
+          <p className="text-sm text-dim">All three are coming soon.</p>
         </div>
       </div>
     </section>

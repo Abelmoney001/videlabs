@@ -14,6 +14,8 @@ import videpay_mark from "@/public/images/ecosystem/videpay-otter.svg";
 import videpay_otter from "@/public/images/ecosystem/videpay-otter-wave.png";
 import chainstreets_logo from "@/public/images/ecosystem/chainstreets-logo-dark.svg";
 import chainstreets_symbol from "@/public/images/ecosystem/chainstreets-symbol.svg";
+import unipus_mark from "@/public/images/ecosystem/unipus-mascot-mark.png";
+import unipus_mascot from "@/public/images/ecosystem/unipus-mascot.png";
 
 // Sponsors
 import base from "@/public/images/sponsors/base.svg";
@@ -38,6 +40,8 @@ export {
   videpay_otter,
   chainstreets_logo,
   chainstreets_symbol,
+  unipus_mark,
+  unipus_mascot,
   base,
   bitcoin,
   bnb,

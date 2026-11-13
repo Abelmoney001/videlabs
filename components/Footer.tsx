@@ -9,6 +9,7 @@ const columns = [
         links: [
             { href: "https://videpay.io", label: "Videpay" },
             { href: "https://chainstreets.io", label: "Chain Streets" },
+            { href: "https://unipus.io", label: "Unipus" },
         ],
     },
     {
@@ -119,7 +120,7 @@ export default function Footer() {
                         >
                             Privacy
                         </Link>
-                        <p>Parent company of Videpay and Chain Streets.</p>
+                        <p>Parent company of Videpay, Chain Streets and Unipus.</p>
                     </div>
                 </div>
             </div>
